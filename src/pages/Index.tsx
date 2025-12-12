@@ -40,24 +40,24 @@ const Index = () => {
 
   const advantages = [
     {
-      icon: 'Award',
-      title: 'Премиальные материалы',
-      description: 'Используем только сертифицированные материалы от ведущих производителей'
+      icon: 'Building2',
+      title: 'Готовая инфраструктура',
+      description: 'Поселок активно развивается: рядом школа, детский сад, автобусная остановка, а на территории строится магазин «Пятёрочка». Все повседневные нужды — в шаговой доступности.'
     },
     {
-      icon: 'Shield',
-      title: 'Гарантия качества',
-      description: 'Официальная гарантия 10 лет на все построенные объекты'
+      icon: 'Trees',
+      title: 'Экологичность и развитие',
+      description: 'Чистый воздух, тишина, просторные участки, отсутствие плотной застройки. Идеальные условия для семей с детьми и спокойной жизни на природе.'
     },
     {
-      icon: 'Users',
-      title: 'Опытная команда',
-      description: 'Более 15 лет опыта в строительстве загородных домов'
+      icon: 'Zap',
+      title: 'Полностью подведённые коммуникации',
+      description: 'Электричество, газ, скважина и станция биоочистки — всё уже подключено. Можно сразу заходить с бригадой и начинать отделку, без дополнительных вложений и ожиданий.'
     },
     {
-      icon: 'Clock',
-      title: 'Точные сроки',
-      description: 'Строим в срок по договору или возвращаем деньги'
+      icon: 'MapPin',
+      title: 'Удобное расположение',
+      description: 'До Гурьевска — 5 минут, до центра Калининграда — 20 минут, до моря — 35. Быстрый выезд в город, при этом вы живёте в тишине и спокойствии.'
     }
   ];
 
@@ -210,25 +210,32 @@ const Index = () => {
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-secondary text-secondary-foreground">Наши преимущества</Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Почему выбирают нас</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Мы не просто строим дома — мы создаём пространство для счастливой жизни
+            <Badge className="mb-4 bg-secondary text-secondary-foreground">О нас</Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Мы — команда профессионалов</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Мы — команда профессионалов с более чем 10-летним опытом строительства современных домов из газобетона в Калининграде и области.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4 leading-relaxed">
+              Мы создаём жильё, в котором сочетаются комфорт, стиль и надежность, используя современные технологии и проверенные материалы. Наша миссия — сделать качественные дома доступными каждому, сохраняя индивидуальный подход к каждому проекту.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {advantages.map((advantage, index) => (
               <Card 
                 key={index} 
                 className="border-2 hover:border-primary transition-all hover:shadow-lg animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name={advantage.icon} size={32} className="text-primary" />
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name={advantage.icon} size={28} className="text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                  <p className="text-muted-foreground">{advantage.description}</p>
                 </CardContent>
               </Card>
             ))}
