@@ -117,7 +117,11 @@ const MainSections = () => {
     { image: 'https://cdn.poehali.dev/files/7(1).jpg', title: 'Дом с мансардой' },
     { image: 'https://cdn.poehali.dev/files/7.jpg', title: 'Дом с мансардой' },
     { image: 'https://cdn.poehali.dev/files/8(1).png', title: 'Дом с мансардой' },
-    { image: 'https://cdn.poehali.dev/files/8.jpg', title: 'Дом с мансардой' }
+    { image: 'https://cdn.poehali.dev/files/8.jpg', title: 'Дом с мансардой' },
+    { image: 'https://cdn.poehali.dev/files/5(1).jpg', title: 'Дом с мансардой' },
+    { image: 'https://cdn.poehali.dev/files/гостиная трехугольный.jpg', title: 'Дом с мансардой' },
+    { image: 'https://cdn.poehali.dev/files/5292251328132355171_121.jpg', title: 'Дом с мансардой' },
+    { image: 'https://cdn.poehali.dev/files/5303509859049344411_121.jpg', title: 'Дом с мансардой' }
   ];
 
   return (
