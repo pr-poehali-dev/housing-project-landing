@@ -103,7 +103,11 @@ const MainSections = () => {
     { image: 'https://cdn.poehali.dev/files/12345.jpg', title: 'Двухэтажный' },
     { image: 'https://cdn.poehali.dev/files/5296620383614208880_121.jpg', title: 'Двухэтажный' },
     { image: 'https://cdn.poehali.dev/files/5301187243814882221_121.jpg', title: 'Двухэтажный' },
-    { image: 'https://cdn.poehali.dev/files/5298935444001197615_121.jpg', title: 'Двухэтажный' }
+    { image: 'https://cdn.poehali.dev/files/5298935444001197615_121.jpg', title: 'Двухэтажный' },
+    { image: 'https://cdn.poehali.dev/files/5298935444001197640_121.jpg', title: 'Двухэтажный' },
+    { image: 'https://cdn.poehali.dev/files/5298935444001197653_121.jpg', title: 'Двухэтажный' },
+    { image: 'https://cdn.poehali.dev/files/5298935444001197655_121.jpg', title: 'Двухэтажный' },
+    { image: 'https://cdn.poehali.dev/files/5298935444001197662_121.jpg', title: 'Двухэтажный' }
   ];
 
   return (
