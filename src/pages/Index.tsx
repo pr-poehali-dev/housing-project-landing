@@ -65,20 +65,23 @@ const Index = () => {
     {
       icon: 'Home',
       title: 'Готовые дома',
-      description: 'Дома под ключ с полной отделкой и коммуникациями',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/016d0735-a52c-425b-ab66-26ab6ee1cc26.jpg'
-    },
-    {
-      icon: 'MapPin',
-      title: 'Земельные участки',
-      description: 'Участки с коммуникациями в развитых коттеджных посёлках',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/5250ee57-704c-4f77-9aa0-69fcd979d836.jpg'
+      description: 'Ваш новый дом — уже ждет вас. Мы предлагаем современные, полностью построенные дома, в формате "под отделку", в уютном и развитом поселке. Продуманные планировки, большие участки, свежий воздух и готовые коммуникации — всё создано для комфортной и спокойной жизни. Вам остаётся только выбрать свой дом и начать новую главу.',
+      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/016d0735-a52c-425b-ab66-26ab6ee1cc26.jpg',
+      link: '#houses'
     },
     {
       icon: 'Hammer',
       title: 'Строительство',
-      description: 'Индивидуальное строительство по вашему проекту',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/67815578-d227-4ffc-8c29-3e46955cb54f.jpg'
+      description: 'Если вам не подошли готовые варианты — у нас есть решение. Мы предложим десятки других проектов из нашей базы: одноэтажные, двухэтажные, дома с мансардой, компактные или просторные. А если хотите что-то особенное — разработаем индивидуальный проект и построим дом, который будет полностью соответствовать вашим пожеланиям, стилю и бюджету.',
+      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/67815578-d227-4ffc-8c29-3e46955cb54f.jpg',
+      link: '#contacts'
+    },
+    {
+      icon: 'MapPin',
+      title: 'Земельные участки',
+      description: 'Начните с чистого листа — создайте дом своей мечты. Просторные участки с ИЖС в живописном месте. Готовые подъездные пути, коммуникации по границе, зеленая территория и удобное расположение — идеальная база, чтобы построить то, что вы хотите: уютный дом, сад, зону отдыха или полноценную семейную усадьбу.',
+      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/5250ee57-704c-4f77-9aa0-69fcd979d836.jpg',
+      link: '#contacts'
     }
   ];
 
@@ -274,9 +277,9 @@ const Index = () => {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
-                    <a href="#contacts">
+                    <a href={service.link}>
                       Подробнее
                       <Icon name="ArrowRight" size={18} className="ml-2" />
                     </a>
