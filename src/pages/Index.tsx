@@ -87,9 +87,12 @@ const Index = () => {
   ];
 
   const gallery = [
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/016d0735-a52c-425b-ab66-26ab6ee1cc26.jpg', title: 'Современный фасад' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/67815578-d227-4ffc-8c29-3e46955cb54f.jpg', title: 'Уютный интерьер' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/5250ee57-704c-4f77-9aa0-69fcd979d836.jpg', title: 'Процесс строительства' }
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/d1e28668-fcb6-447e-8a9a-67b15c2e0b3c.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/eee0c7f7-4fa4-4612-bae5-36fb85bdd12f.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/92c28c11-bfb1-404a-bc41-4a68d8d3c96a.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/b70e62db-ab7e-473c-a39d-e46dae93ed52.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/b1e37835-c1bb-4e84-92f1-a4f67dbe13c8.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/d1a42bb3-06e8-402b-8e64-ce25fd20406b.jpg', title: 'Одноэтажный' }
   ];
 
   return (
