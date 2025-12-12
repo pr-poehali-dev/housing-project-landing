@@ -9,11 +9,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Icon name="Home" size={28} className="text-primary" />
-              <span className="text-xl font-bold">ДомСтрой</span>
+              <span className="text-xl font-bold">SUNRISE</span>
             </div>
-            <p className="text-white/70">
-              Строим дома премиум-класса с 2008 года. Качество, проверенное временем.
-            </p>
+
           </div>
           <div>
             <h4 className="font-bold mb-4">Услуги</h4>
@@ -36,25 +34,14 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Контакты</h4>
             <ul className="space-y-2 text-white/70">
+              <li>Сергей</li>
               <li>+7 (911) 471-77-55</li>
-              <li>info@domstroy.ru</li>
-              <li>г. Москва, ул. Строителей, 10</li>
+              <li>Калининградская область, Гурьевский муниципальный округ, пос. Первомайское</li>
             </ul>
-            <div className="flex gap-3 mt-4">
-              <Button size="icon" variant="ghost" className="text-white hover:text-primary">
-                <Icon name="MessageCircle" size={20} />
-              </Button>
-              <Button size="icon" variant="ghost" className="text-white hover:text-primary">
-                <Icon name="Instagram" size={20} />
-              </Button>
-              <Button size="icon" variant="ghost" className="text-white hover:text-primary">
-                <Icon name="Phone" size={20} />
-              </Button>
-            </div>
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p>© 2024 ДомСтрой. Все права защищены.</p>
+          <p className="text-sm leading-relaxed">ИП КРИВОГОРНИЦЫН А.О. ИНН 380471284659 ОГРНИП 324180000012777<br />© 2025 SUNRISE. Все права защищены.<br />Материалы сайта защищены законом РФ об авторских и смежных правах. Копирование запрещено.<br />Данный сайт носит исключительно информационный характер и не является публичной офертой.</p>
         </div>
       </div>
     </footer>

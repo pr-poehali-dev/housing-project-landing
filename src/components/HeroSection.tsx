@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
               Ваш новый дом
               <br />
               <span className="text-primary">— уже построен.</span>
