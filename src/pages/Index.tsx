@@ -335,7 +335,7 @@ const Index = () => {
             <Badge className="mb-4 bg-primary text-primary-foreground">Наши работы</Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Фотогалерея проектов</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Взгляните на реализованные проекты и убедитесь в нашем профессионализме
+              Взгляните на возможную реализацию ландшафтного дизайна и внутреннее обустройство домов
             </p>
           </div>
           <div className="max-w-5xl mx-auto">
