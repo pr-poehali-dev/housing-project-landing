@@ -96,7 +96,8 @@ const Index = () => {
     { image: 'https://cdn.poehali.dev/files/5298935444001196955_121.jpg', title: 'Одноэтажный' },
     { image: 'https://cdn.poehali.dev/files/5298935444001196920_121.jpg', title: 'Одноэтажный' },
     { image: 'https://cdn.poehali.dev/files/5294368583800525473_121.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/files/5298935444001196915_121.jpg', title: 'Одноэтажный' }
+    { image: 'https://cdn.poehali.dev/files/5298935444001196915_121.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/files/5298935444001196851_121.jpg', title: 'Одноэтажный' }
   ];
 
   return (
