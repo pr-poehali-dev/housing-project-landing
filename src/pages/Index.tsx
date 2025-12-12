@@ -380,7 +380,7 @@ const Index = () => {
               <Badge className="mb-4 bg-secondary text-secondary-foreground">Свяжитесь с нами</Badge>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">Готовы обсудить ваш проект?</h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Оставьте заявку, и наш специалист свяжется с вами в течение 15 минут
+                Оставьте заявку, и наш специалист свяжется с вами
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -392,22 +392,14 @@ const Index = () => {
                     <a href="tel:+79114717755" className="text-lg text-primary hover:underline">+7 (911) 471-77-55</a>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Icon name="Mail" size={24} className="text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:info@domstroy.ru" className="text-lg text-primary hover:underline">info@domstroy.ru</a>
-                  </div>
-                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Icon name="MapPin" size={24} className="text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Адрес офиса</div>
-                    <p className="text-muted-foreground">г. Москва, ул. Строителей, д. 10</p>
+                    <div className="font-semibold mb-1">Адрес</div>
+                    <p className="text-muted-foreground">Калининградская область, Гурьевский муниципальный округ, пос. Первомайское</p>
                   </div>
                 </div>
               </div>
