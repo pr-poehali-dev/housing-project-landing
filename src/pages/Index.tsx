@@ -128,9 +128,11 @@ const Index = () => {
               <a href="#gallery" className="text-foreground hover:text-primary transition-colors">Галерея</a>
               <a href="#contacts" className="text-foreground hover:text-primary transition-colors">Контакты</a>
             </nav>
-            <Button className="hidden md:flex">
-              <Icon name="Phone" size={18} className="mr-2" />
-              Позвонить
+            <Button className="hidden md:flex" asChild>
+              <a href="tel:+79001234567">
+                <Icon name="Phone" size={18} className="mr-2" />
+                Позвонить
+              </a>
             </Button>
             <Button size="icon" variant="ghost" className="md:hidden">
               <Icon name="Menu" size={24} />
@@ -151,13 +153,17 @@ const Index = () => {
                 Используем только лучшие материалы и передовые технологии строительства. Каждый дом — произведение искусства.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="text-lg">
-                  <Icon name="Home" size={20} className="mr-2" />
-                  Выбрать проект
+                <Button size="lg" className="text-lg" asChild>
+                  <a href="#houses">
+                    <Icon name="Home" size={20} className="mr-2" />
+                    Выбрать проект
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg">
-                  <Icon name="Calculator" size={20} className="mr-2" />
-                  Рассчитать стоимость
+                <Button size="lg" variant="outline" className="text-lg" asChild>
+                  <a href="tel:+79001234567">
+                    <Icon name="Phone" size={20} className="mr-2" />
+                    Связаться с нами
+                  </a>
                 </Button>
               </div>
             </div>
@@ -244,9 +250,11 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    Подробнее
-                    <Icon name="ArrowRight" size={18} className="ml-2" />
+                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
+                    <a href="#contacts">
+                      Подробнее
+                      <Icon name="ArrowRight" size={18} className="ml-2" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -278,9 +286,11 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg">
-              <Icon name="Gift" size={20} className="mr-2" />
-              Получить скидку
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg" asChild>
+              <a href="#contacts">
+                <Icon name="Gift" size={20} className="mr-2" />
+                Получить скидку
+              </a>
             </Button>
           </div>
         </div>
@@ -324,9 +334,11 @@ const Index = () => {
                       <span>{house.rooms}</span>
                     </div>
                   </div>
-                  <Button className="w-full">
-                    Узнать больше
-                    <Icon name="ArrowRight" size={18} className="ml-2" />
+                  <Button className="w-full" asChild>
+                    <a href="#contacts">
+                      Подробнее
+                      <Icon name="ArrowRight" size={18} className="ml-2" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -446,9 +458,11 @@ const Index = () => {
                     placeholder="Расскажите о ваших пожеланиях..."
                   />
                 </div>
-                <Button type="submit" className="w-full" size="lg">
-                  Отправить заявку
-                  <Icon name="Send" size={18} className="ml-2" />
+                <Button type="button" className="w-full" size="lg" asChild>
+                  <a href="tel:+79001234567">
+                    <Icon name="Phone" size={18} className="mr-2" />
+                    Связаться с нами
+                  </a>
                 </Button>
               </form>
             </Card>
