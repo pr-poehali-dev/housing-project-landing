@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,32 +12,6 @@ import {
 } from "@/components/ui/carousel";
 
 const Index = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 7,
-    hours: 12,
-    minutes: 30,
-    seconds: 45
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   const advantages = [
     {
       icon: 'Building2',
@@ -295,31 +269,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">Специальное предложение</Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              Скидка 15% на строительство до конца месяца
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              Только до конца месяца вы можете получить УНИКАЛЬНУЮ СКИДКУ при покупке Одноэтажного или Двухэтажного дома!
             </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Успейте заключить договор и получите скидку на строительство вашего дома
-            </p>
-            <div className="flex justify-center gap-4 mb-8">
-              {[
-                { value: timeLeft.days, label: 'Дней' },
-                { value: timeLeft.hours, label: 'Часов' },
-                { value: timeLeft.minutes, label: 'Минут' },
-                { value: timeLeft.seconds, label: 'Секунд' }
-              ].map((item, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 min-w-[80px]">
-                  <div className="text-4xl font-bold">{String(item.value).padStart(2, '0')}</div>
-                  <div className="text-sm text-white/80">{item.label}</div>
-                </div>
-              ))}
-            </div>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg" asChild>
-              <a href="#contacts">
-                <Icon name="Gift" size={20} className="mr-2" />
-                Получить скидку
-              </a>
-            </Button>
           </div>
         </div>
       </section>
