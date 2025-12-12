@@ -60,7 +60,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary">3 дома</div>
-                  <div className="text-sm text-muted-foreground">Готовы к заселению</div>
+                  <div className="text-sm text-muted-foreground">Готовы</div>
                 </div>
               </div>
             </div>
