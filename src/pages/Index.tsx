@@ -129,7 +129,7 @@ const Index = () => {
               <a href="#contacts" className="text-foreground hover:text-primary transition-colors">Контакты</a>
             </nav>
             <Button className="hidden md:flex" asChild>
-              <a href="tel:+79001234567">
+              <a href="tel:+79114717755">
                 <Icon name="Phone" size={18} className="mr-2" />
                 Позвонить
               </a>
@@ -178,7 +178,7 @@ const Index = () => {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg" asChild>
-                  <a href="tel:+79001234567">
+                  <a href="tel:+79114717755">
                     <Icon name="Phone" size={20} className="mr-2" />
                     Связаться с нами
                   </a>
@@ -417,7 +417,7 @@ const Index = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Телефон</div>
-                    <a href="tel:+79001234567" className="text-lg text-primary hover:underline">+7 (900) 123-45-67</a>
+                    <a href="tel:+79114717755" className="text-lg text-primary hover:underline">+7 (911) 471-77-55</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -477,7 +477,7 @@ const Index = () => {
                   />
                 </div>
                 <Button type="button" className="w-full" size="lg" asChild>
-                  <a href="tel:+79001234567">
+                  <a href="tel:+79114717755">
                     <Icon name="Phone" size={18} className="mr-2" />
                     Связаться с нами
                   </a>
@@ -521,7 +521,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Контакты</h4>
               <ul className="space-y-2 text-white/70">
-                <li>+7 (900) 123-45-67</li>
+                <li>+7 (911) 471-77-55</li>
                 <li>info@domstroy.ru</li>
                 <li>г. Москва, ул. Строителей, 10</li>
               </ul>
