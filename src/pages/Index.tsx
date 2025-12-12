@@ -61,25 +61,28 @@ const Index = () => {
 
   const houses = [
     {
-      title: 'Проект "Комфорт"',
+      title: 'Одноэтажный',
+      area: '121 м²',
+      price: 'СКИДКА',
+      rooms: '4 комнаты',
+      plot: '7,7 сот.',
+      image: 'https://cdn.poehali.dev/files/gen_cf362485-497e-488c-8a7b-fc52d2de15db.jpg'
+    },
+    {
+      title: 'Двухэтажный',
+      area: '144 м²',
+      price: 'СКИДКА',
+      rooms: '5 комнат',
+      plot: '8,6 сот.',
+      image: 'https://cdn.poehali.dev/files/gen_ab020d90-f774-413f-b496-d7a6f57164e3.png'
+    },
+    {
+      title: 'Дом с мансардой',
       area: '120 м²',
-      price: '8 500 000 ₽',
-      rooms: '3 спальни',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/016d0735-a52c-425b-ab66-26ab6ee1cc26.jpg'
-    },
-    {
-      title: 'Проект "Премиум"',
-      area: '180 м²',
-      price: '12 800 000 ₽',
-      rooms: '4 спальни',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/67815578-d227-4ffc-8c29-3e46955cb54f.jpg'
-    },
-    {
-      title: 'Проект "Семейный"',
-      area: '150 м²',
-      price: '10 200 000 ₽',
-      rooms: '3 спальни + кабинет',
-      image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/5250ee57-704c-4f77-9aa0-69fcd979d836.jpg'
+      price: null,
+      rooms: '5 комнат',
+      plot: '7,5 сот.',
+      image: 'https://cdn.poehali.dev/files/gen_75bbc5bb-bf25-488f-aef8-eba3eef79051.png'
     }
   ];
 
@@ -278,13 +281,6 @@ const Index = () => {
 
       <section id="houses" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-secondary text-secondary-foreground">Готовые решения</Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Популярные проекты домов</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Выберите готовый проект или создадим индивидуальный специально для вас
-            </p>
-          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {houses.map((house, index) => (
               <Card 
@@ -298,9 +294,11 @@ const Index = () => {
                     alt={house.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
-                    {house.price}
-                  </Badge>
+                  {house.price && (
+                    <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground text-lg font-bold">
+                      {house.price}
+                    </Badge>
+                  )}
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-4">{house.title}</h3>
@@ -313,9 +311,13 @@ const Index = () => {
                       <Icon name="Bed" size={18} />
                       <span>{house.rooms}</span>
                     </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Icon name="Maximize" size={18} />
+                      <span>Участок: {house.plot}</span>
+                    </div>
                   </div>
                   <Button className="w-full" asChild>
-                    <a href="#contacts">
+                    <a href="#gallery">
                       Подробнее
                       <Icon name="ArrowRight" size={18} className="ml-2" />
                     </a>
