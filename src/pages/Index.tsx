@@ -87,12 +87,12 @@ const Index = () => {
   ];
 
   const gallery = [
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/d1e28668-fcb6-447e-8a9a-67b15c2e0b3c.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/eee0c7f7-4fa4-4612-bae5-36fb85bdd12f.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/92c28c11-bfb1-404a-bc41-4a68d8d3c96a.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/b70e62db-ab7e-473c-a39d-e46dae93ed52.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/b1e37835-c1bb-4e84-92f1-a4f67dbe13c8.jpg', title: 'Одноэтажный' },
-    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/files/d1a42bb3-06e8-402b-8e64-ce25fd20406b.jpg', title: 'Одноэтажный' }
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/d1e28668-fcb6-447e-8a9a-67b15c2e0b3c.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/eee0c7f7-4fa4-4612-bae5-36fb85bdd12f.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/92c28c11-bfb1-404a-bc41-4a68d8d3c96a.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/b70e62db-ab7e-473c-a39d-e46dae93ed52.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/b1e37835-c1bb-4e84-92f1-a4f67dbe13c8.jpg', title: 'Одноэтажный' },
+    { image: 'https://cdn.poehali.dev/projects/e18ae36e-89aa-40ef-b591-3e11349bf7a1/bucket/d1a42bb3-06e8-402b-8e64-ce25fd20406b.jpg', title: 'Одноэтажный' }
   ];
 
   return (
