@@ -9,39 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useState } from 'react';
-
 const MainSections = () => {
-  const [formData, setFormData] = useState({ name: '', phone: '', interest: 'Готовый дом', comment: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-
-    try {
-      const response = await fetch('https://functions.poehali.dev/0431923e-e746-485f-9d88-05226ccd82a3', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitMessage('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-        setFormData({ name: '', phone: '', interest: 'Готовый дом', comment: '' });
-      } else {
-        setSubmitMessage('Ошибка отправки. Попробуйте позвонить: +7 (911) 471-77-55');
-      }
-    } catch {
-      setSubmitMessage('Ошибка отправки. Попробуйте позвонить: +7 (911) 471-77-55');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
   const advantages = [
     {
       icon: 'Building2',
@@ -340,94 +308,67 @@ const MainSections = () => {
 
       <section id="contacts" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="animate-slide-in-left">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="animate-fade-in">
               <Badge className="mb-4 bg-secondary text-secondary-foreground">Свяжитесь с нами</Badge>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">Готовы обсудить ваш проект?</h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Оставьте заявку, и наш специалист свяжется с вами
+              <p className="text-xl text-muted-foreground mb-12">
+                Позвоните нам или напишите в удобный мессенджер
               </p>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Icon name="Phone" size={24} className="text-primary" />
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-8 hover:shadow-xl transition-shadow">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <Icon name="Phone" size={32} className="text-primary" />
                   </div>
-                  <div>
-                    <div className="font-semibold mb-1">Телефон</div>
-                    <a href="tel:+79114717755" className="text-lg text-primary hover:underline">+7 (911) 471-77-55</a>
-                  </div>
-                </div>
+                  <h3 className="font-bold text-xl mb-2">Позвонить</h3>
+                  <p className="text-muted-foreground mb-4">Сергей</p>
+                  <Button size="lg" className="w-full" asChild>
+                    <a href="tel:+79114717755">
+                      <Icon name="Phone" size={18} className="mr-2" />
+                      +7 (911) 471-77-55
+                    </a>
+                  </Button>
+                </Card>
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Icon name="MapPin" size={24} className="text-primary" />
+                <Card className="p-8 hover:shadow-xl transition-shadow">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <Icon name="Instagram" size={32} className="text-primary" />
                   </div>
-                  <div>
-                    <div className="font-semibold mb-1">Адрес</div>
-                    <p className="text-muted-foreground">Калининградская область, Гурьевский муниципальный округ, пос. Первомайское</p>
+                  <h3 className="font-bold text-xl mb-2">Instagram</h3>
+                  <p className="text-muted-foreground mb-4">Direct сообщения</p>
+                  <Button size="lg" className="w-full" asChild>
+                    <a href="https://www.instagram.com/seregapostroy?igsh=aHFxZTl2dGJvMm5h" target="_blank" rel="noopener noreferrer">
+                      <Icon name="Instagram" size={18} className="mr-2" />
+                      Написать
+                    </a>
+                  </Button>
+                </Card>
+
+                <Card className="p-8 hover:shadow-xl transition-shadow">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
+                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.15 14.51c-.46.47-1.07.73-1.67.73-.5 0-.97-.18-1.33-.51-.16-.15-.67-.61-1.28-1.16-.41.36-1.01.88-1.58 1.32-.34.26-.73.39-1.12.39-.62 0-1.18-.36-1.44-.93-.38-.85-.76-2.39-.76-3.35 0-.71.17-1.28.5-1.65.3-.33.72-.51 1.18-.51.85 0 1.53.55 2.05 1.65.24.51.43.98.57 1.39.52-.47 1.14-1.05 1.7-1.6.34-.34.53-.79.53-1.26 0-.42-.15-.82-.42-1.12-.28-.32-.68-.5-1.1-.5-.13 0-.26.02-.38.05.17-.4.56-.68 1-.68.62 0 1.13.51 1.13 1.13 0 .35-.13.68-.37.93-.53.56-1.18 1.24-1.76 1.82.65.67 1.22 1.26 1.45 1.5.15.16.35.24.56.24.24 0 .46-.11.61-.3.23-.28.35-.65.35-1.03v-2.58c0-.62.5-1.12 1.12-1.12s1.12.5 1.12 1.12v2.58c0 .89-.32 1.73-.91 2.35z"/>
+                    </svg>
                   </div>
+                  <h3 className="font-bold text-xl mb-2">ВКонтакте</h3>
+                  <p className="text-muted-foreground mb-4">Личные сообщения</p>
+                  <Button size="lg" className="w-full" asChild>
+                    <a href="https://vk.com/sunrise39" target="_blank" rel="noopener noreferrer">
+                      <Icon name="MessageCircle" size={18} className="mr-2" />
+                      Написать
+                    </a>
+                  </Button>
+                </Card>
+              </div>
+
+              <div className="mt-12 pt-12 border-t border-border">
+                <div className="flex items-center justify-center gap-3 text-muted-foreground">
+                  <Icon name="MapPin" size={20} className="text-primary" />
+                  <p>Калининградская область, Гурьевский муниципальный округ, пос. Первомайское</p>
                 </div>
               </div>
             </div>
-            <Card className="p-8 animate-scale-in">
-              <h3 className="text-2xl font-bold mb-6">Оставить заявку</h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Ваше имя</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                    placeholder="Иван Иванов"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Телефон</label>
-                  <input 
-                    type="tel" 
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                    placeholder="+7 (___) ___-__-__"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Что вас интересует?</label>
-                  <select 
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                    value={formData.interest}
-                    onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  >
-                    <option>Готовый дом</option>
-                    <option>Земельный участок</option>
-                    <option>Строительство по проекту</option>
-                    <option>Консультация</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Комментарий</label>
-                  <textarea 
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
-                    rows={4}
-                    placeholder="Расскажите о ваших пожеланиях..."
-                    value={formData.comment}
-                    onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-                  />
-                </div>
-                {submitMessage && (
-                  <div className={`p-3 rounded-lg text-sm ${submitMessage.includes('отправлена') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
-                    {submitMessage}
-                  </div>
-                )}
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                  <Icon name="Send" size={18} className="mr-2" />
-                  {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-                </Button>
-              </form>
-            </Card>
           </div>
         </div>
       </section>
