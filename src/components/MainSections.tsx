@@ -9,8 +9,39 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useState } from 'react';
 
 const MainSections = () => {
+  const [formData, setFormData] = useState({ name: '', phone: '', interest: 'Готовый дом', comment: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/0431923e-e746-485f-9d88-05226ccd82a3', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+        setFormData({ name: '', phone: '', interest: 'Готовый дом', comment: '' });
+      } else {
+        setSubmitMessage('Ошибка отправки. Попробуйте позвонить: +7 (911) 471-77-55');
+      }
+    } catch {
+      setSubmitMessage('Ошибка отправки. Попробуйте позвонить: +7 (911) 471-77-55');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const advantages = [
     {
       icon: 'Building2',
@@ -340,13 +371,16 @@ const MainSections = () => {
             </div>
             <Card className="p-8 animate-scale-in">
               <h3 className="text-2xl font-bold mb-6">Оставить заявку</h3>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium mb-2">Ваше имя</label>
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                     placeholder="Иван Иванов"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
                   />
                 </div>
                 <div>
@@ -355,11 +389,18 @@ const MainSections = () => {
                     type="tel" 
                     className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                     placeholder="+7 (___) ___-__-__"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Что вас интересует?</label>
-                  <select className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+                  <select 
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                    value={formData.interest}
+                    onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                  >
                     <option>Готовый дом</option>
                     <option>Земельный участок</option>
                     <option>Строительство по проекту</option>
@@ -372,13 +413,18 @@ const MainSections = () => {
                     className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
                     rows={4}
                     placeholder="Расскажите о ваших пожеланиях..."
+                    value={formData.comment}
+                    onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
                   />
                 </div>
-                <Button type="button" className="w-full" size="lg" asChild>
-                  <a href="tel:+79114717755">
-                    <Icon name="Phone" size={18} className="mr-2" />
-                    Связаться с нами
-                  </a>
+                {submitMessage && (
+                  <div className={`p-3 rounded-lg text-sm ${submitMessage.includes('отправлена') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                    {submitMessage}
+                  </div>
+                )}
+                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                  <Icon name="Send" size={18} className="mr-2" />
+                  {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                 </Button>
               </form>
             </Card>

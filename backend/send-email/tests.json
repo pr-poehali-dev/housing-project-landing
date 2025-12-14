@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Успешная отправка заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Тестов",
+        "phone": "+7 (999) 123-45-67",
+        "interest": "Готовый дом",
+        "comment": "Хочу узнать подробнее"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Отсутствует обязательное поле",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "phone": "+7 (999) 123-45-67"
+      },
+      "expectedStatus": 502
+    }
+  ]
+}
