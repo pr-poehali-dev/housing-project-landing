@@ -17,18 +17,26 @@ const MainSections = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('Все');
 
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash.startsWith('#gallery-')) {
-      const houseType = hash.replace('#gallery-', '');
-      setSelectedFilter(houseType);
-      const startIndex = gallery.findIndex(item => item.title === houseType);
-      if (startIndex !== -1 && carouselApi) {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#gallery-')) {
+        const houseType = decodeURIComponent(hash.replace('#gallery-', ''));
+        setSelectedFilter(houseType);
+        
         setTimeout(() => {
-          carouselApi.scrollTo(startIndex);
+          const gallerySection = document.getElementById('gallery');
+          if (gallerySection) {
+            gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }, 100);
       }
-    }
-  }, [carouselApi]);
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
   const advantages = [
     {
       icon: 'Building2',
