@@ -8,8 +8,25 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import { useEffect, useState } from 'react';
+
 const MainSections = () => {
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#gallery-')) {
+      const houseType = hash.replace('#gallery-', '');
+      const startIndex = gallery.findIndex(item => item.title === houseType);
+      if (startIndex !== -1 && carouselApi) {
+        setTimeout(() => {
+          carouselApi.scrollTo(startIndex);
+        }, 100);
+      }
+    }
+  }, [carouselApi]);
   const advantages = [
     {
       icon: 'Building2',
@@ -258,7 +275,7 @@ const MainSections = () => {
                     </div>
                   </div>
                   <Button className="w-full" asChild>
-                    <a href="#gallery">
+                    <a href={`#gallery-${house.title}`}>
                       Подробнее
                       <Icon name="ArrowRight" size={18} className="ml-2" />
                     </a>
@@ -280,7 +297,7 @@ const MainSections = () => {
             </p>
           </div>
           <div className="max-w-5xl mx-auto">
-            <Carousel className="w-full">
+            <Carousel className="w-full" setApi={setCarouselApi}>
               <CarouselContent>
                 {gallery.map((item, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
