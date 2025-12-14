@@ -14,11 +14,13 @@ import { useEffect, useState } from 'react';
 
 const MainSections = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [selectedFilter, setSelectedFilter] = useState<string>('Все');
 
   useEffect(() => {
     const hash = window.location.hash;
     if (hash.startsWith('#gallery-')) {
       const houseType = hash.replace('#gallery-', '');
+      setSelectedFilter(houseType);
       const startIndex = gallery.findIndex(item => item.title === houseType);
       if (startIndex !== -1 && carouselApi) {
         setTimeout(() => {
@@ -289,32 +291,47 @@ const MainSections = () => {
 
       <section id="gallery" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4 bg-primary text-primary-foreground">Наши работы</Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Фотогалерея проектов</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Взгляните на возможную реализацию ландшафтного дизайна и внутреннее обустройство домов
             </p>
+            
+            <div className="flex flex-wrap justify-center gap-3">
+              {['Все', 'Одноэтажный', 'Двухэтажный', 'Дом с мансардой'].map((filter) => (
+                <Button
+                  key={filter}
+                  variant={selectedFilter === filter ? 'default' : 'outline'}
+                  onClick={() => setSelectedFilter(filter)}
+                  className="px-6"
+                >
+                  {filter}
+                </Button>
+              ))}
+            </div>
           </div>
           <div className="max-w-5xl mx-auto">
             <Carousel className="w-full" setApi={setCarouselApi}>
               <CarouselContent>
-                {gallery.map((item, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden">
-                      <div className="relative h-80">
-                        <img 
-                          src={item.image} 
-                          alt={item.title} 
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                          <p className="text-white font-semibold text-lg">{item.title}</p>
+                {gallery
+                  .filter(item => selectedFilter === 'Все' || item.title === selectedFilter)
+                  .map((item, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                      <Card className="overflow-hidden">
+                        <div className="relative h-80">
+                          <img 
+                            src={item.image} 
+                            alt={item.title} 
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                            <p className="text-white font-semibold text-lg">{item.title}</p>
+                          </div>
                         </div>
-                      </div>
-                    </Card>
-                  </CarouselItem>
-                ))}
+                      </Card>
+                    </CarouselItem>
+                  ))}
               </CarouselContent>
               <CarouselPrevious className="left-4" />
               <CarouselNext className="right-4" />
