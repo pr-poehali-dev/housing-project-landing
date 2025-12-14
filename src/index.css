@@ -111,3 +111,14 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+/* Hide poehali.dev branding */
+#pp-root,
+[id^="pp-"],
+.pp-badge,
+.poehali-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
