@@ -55,8 +55,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     msg = MIMEMultipart('alternative')
     msg['Subject'] = f'Новая заявка от {form.name}'
-    msg['From'] = 'ds03219@gmail.com'
-    msg['To'] = 'ds03219@gmail.com'
+    msg['From'] = 'russ.marina85@gmail.com'
+    msg['To'] = 'russ.marina85@gmail.com'
     
     html = f'''
     <html>
@@ -88,7 +88,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     msg.attach(part)
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-        server.login('ds03219@gmail.com', smtp_password)
+        server.login('russ.marina85@gmail.com', smtp_password)
         server.send_message(msg)
     
     return {

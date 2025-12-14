@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="text-xl font-bold">SUNRISE</span>
             </div>
             <div className="flex gap-3">
-              <a href="mailto:ds03219@gmail.com" className="bg-white/10 p-2 rounded-lg hover:bg-primary transition-colors" aria-label="Email">
+              <a href="mailto:russ.marina85@gmail.com" className="bg-white/10 p-2 rounded-lg hover:bg-primary transition-colors" aria-label="Email">
                 <Icon name="Mail" size={20} />
               </a>
               <a href="https://vk.com/sunrise39" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-lg hover:bg-primary transition-colors" aria-label="VK">
