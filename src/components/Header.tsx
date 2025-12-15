@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="Home" size={32} className="text-primary" />
-            <span className="text-2xl font-bold text-primary">SUNRISE</span>
+            <span className="text-2xl font-bold text-primary">SUNRISE39</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#about" className="text-foreground hover:text-primary transition-colors">О нас</a>

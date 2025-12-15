@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Icon name="Home" size={28} className="text-primary" />
-              <span className="text-xl font-bold">SUNRISE</span>
+              <span className="text-xl font-bold">SUNRISE39</span>
             </div>
             <div className="flex gap-3">
               <a href="mailto:russ.marina85@gmail.com" className="bg-white/10 p-2 rounded-lg hover:bg-primary transition-colors" aria-label="Email">
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p className="text-xs leading-relaxed mb-2">ИП КРИВОГОРНИЦЫН А.О. ИНН 380471284659 ОГРНИП 324180000012777<br />© 2025 SUNRISE. Все права защищены.<br />Материалы сайта защищены законом РФ об авторских и смежных правах. Копирование запрещено.<br />Данный сайт носит исключительно информационный характер и не является публичной офертой.</p>
+          <p className="text-xs leading-relaxed mb-2">ИП КРИВОГОРНИЦЫН А.О. ИНН 380471284659 ОГРНИП 324180000012777<br />© 2025 SUNRISE39. Все права защищены.<br />Материалы сайта защищены законом РФ об авторских и смежных правах. Копирование запрещено.<br />Данный сайт носит исключительно информационный характер и не является публичной офертой.</p>
           <a href="https://sunrise39.ru/privacy/" target="_blank" rel="noopener noreferrer" className="text-xs hover:text-primary transition-colors underline">Политика конфиденциальности</a>
         </div>
       </div>
