@@ -95,7 +95,7 @@ const MainSections = () => {
     },
     {
       title: 'Двухэтажный',
-      area: '144 м²',
+      area: '123 м²',
       price: 'СКИДКА',
       rooms: '5 комнат',
       plot: '8,6 сот.',
